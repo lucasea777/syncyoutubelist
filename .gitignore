@@ -1,0 +1,6 @@
+__pycache__
+get_playlist.py-oauth2.json
+client_secrets.json
+*.pyc
+oauth2.json
+
