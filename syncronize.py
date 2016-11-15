@@ -4,6 +4,7 @@ from os import walk
 import os
 import shutil
 import traceback
+import subprocess
 class Syncronize():
     def __init__(self, path, playlistId, onprogress, ondownloading, oncalculated, onend, 
                  extract_on_end=False):
@@ -46,6 +47,7 @@ class Syncronize():
                     self.downloader.stop = False
                     break
                 shutil.move(out_path, self.path)
+                subprocess.call(["eyeD3","-a",".","-t", filename, self.path])
         except Exception as e:
             ex = (e.__class__.__name__, e.args)
             traceback.print_exc()
